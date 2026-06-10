@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | The Cakery Artisanal Patisserie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#e7e2d8",
+                      "inverse-surface": "#422a26",
+                      "inverse-primary": "#97d3ba",
+                      "on-primary-container": "#81bda4",
+                      "surface-tint": "#2e6954",
+                      "on-secondary-fixed": "#1d1c16",
+                      "on-primary-fixed": "#002116",
+                      "primary-container": "#0b4d3a",
+                      "primary": "#003526",
+                      "surface-bright": "#fff8f6",
+                      "tertiary": "#3c2a00",
+                      "on-secondary-fixed-variant": "#494740",
+                      "on-tertiary-container": "#d0ab63",
+                      "secondary": "#615e57",
+                      "secondary-fixed-dim": "#cac6bd",
+                      "tertiary-fixed-dim": "#e7c177",
+                      "on-tertiary-fixed": "#261900",
+                      "surface": "#fff8f6",
+                      "on-surface-variant": "#404944",
+                      "surface-container-highest": "#ffdad4",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#fff0ee",
+                      "background": "#fff8f6",
+                      "tertiary-fixed": "#ffdea2",
+                      "primary-fixed": "#b2efd5",
+                      "on-secondary-container": "#67645c",
+                      "primary-fixed-dim": "#97d3ba",
+                      "on-primary-fixed-variant": "#10503d",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#ffe9e5",
+                      "surface-variant": "#ffdad4",
+                      "on-surface": "#2b1613",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#e7e2d8",
+                      "outline-variant": "#bfc9c3",
+                      "on-tertiary-fixed-variant": "#5c4201",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#f8d1cb",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "outline": "#707974",
+                      "on-background": "#2b1613",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#583f00",
+                      "surface-container-high": "#ffe2dd",
+                      "inverse-on-surface": "#ffedea",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "section-gap": "120px",
+                      "base": "8px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "display-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-md": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            columns: 1;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid { columns: 2; }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid { columns: 3; }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+        .lightbox-active {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<a class="font-display-lg text-display-lg font-bold text-primary dark:text-inverse-primary" href="index.html">The Cakery</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-medium hover:text-primary-container dark:hover:text-on-primary-fixed transition-colors duration-300" href="index.html">Home</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-medium hover:text-primary-container dark:hover:text-on-primary-fixed transition-colors duration-300" href="menu.html">Menu</a>
+<a class="text-primary dark:text-inverse-primary border-b-2 border-tertiary-fixed font-bold" href="#">Gallery</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-medium hover:text-primary-container dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">Locations</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-medium hover:text-primary-container dark:hover:text-on-primary-fixed transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md text-label-md scale-95 active:scale-90 transition-transform hover:bg-primary-container hover:text-on-primary-container">
+                Order Now
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-20 text-center">
+<span class="font-label-md text-label-md text-tertiary uppercase tracking-widest mb-4 block">Visual Indulgence</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">A Curated Gallery of Fine Moments</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Explore our artisanal creations, from bespoke celebratory cakes to the rhythmic artistry of our kitchen. Every frame tells a story of craftsmanship and flavor.
+            </p>
+</section>
+<!-- Filter Chips -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-12">
+<div class="flex flex-wrap justify-center gap-4">
+<button class="px-6 py-2 rounded-full border border-primary bg-primary text-on-primary font-label-md transition-all">All Collections</button>
+<button class="px-6 py-2 rounded-full border border-outline text-on-surface-variant hover:border-primary hover:text-primary font-label-md transition-all">Bespoke Cakes</button>
+<button class="px-6 py-2 rounded-full border border-outline text-on-surface-variant hover:border-primary hover:text-primary font-label-md transition-all">Dessert Jars</button>
+<button class="px-6 py-2 rounded-full border border-outline text-on-surface-variant hover:border-primary hover:text-primary font-label-md transition-all">Celebrations</button>
+<button class="px-6 py-2 rounded-full border border-outline text-on-surface-variant hover:border-primary hover:text-primary font-label-md transition-all">Behind the Scenes</button>
+</div>
+</section>
+<!-- Masonry Gallery -->
+<section class="px-margin-desktop max-w-container-max mx-auto">
+<div class="masonry-grid gap-gutter">
+<!-- Gallery Item 1: Cake -->
+<div class="masonry-item group cursor-pointer" onclick="openLightbox('img-1')">
+<div class="relative overflow-hidden rounded-xl bg-secondary-container">
+<img alt="Luxury Wedding Cake" class="w-full h-auto transition-transform duration-700 group-hover:scale-110" data-alt="A luxury three-tiered wedding cake with intricate white lace frosting details, decorated with delicate fresh forest green botanical leaves and gold leaf accents. The cake sits on a vintage brass stand in a bright, minimalist studio with high-fashion lighting and soft cream-colored background tones. The mood is sophisticated and artisanal." id="img-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgHa8-CPiWpYi9puSKhhBd2TmGZaTFBLALTSOv7wBWN1rDAFvuTxGzDUd2LKcLzXz9Rpzj2vd98X6MQz8nYc9DtcPTQyy5vo-a4dh9wEc2EYQT1Tsrfb4kPlCe1IY65hSFqzSA7Elb3pBZW3OMBTl7crukEWtU4fJbLp0Mw-Ufks2sQ1SUbJeHzH9a-0vpfPtMbiKV8XmEqgWzx6PeeNTr_LyTn2jx1owW_b36tTAIzrh1yl9wFRf_GdqdC9TteM-0uwyIZa7JBSA"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-surface text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="mt-4 px-2">
+<p class="font-label-md text-label-md text-tertiary">Bespoke Cakes</p>
+<h3 class="font-headline-md text-headline-md text-primary mt-1">The Emerald Elegance</h3>
+</div>
+</div>
+<!-- Gallery Item 2: Dessert Jar -->
+<div class="masonry-item group cursor-pointer" onclick="openLightbox('img-2')">
+<div class="relative overflow-hidden rounded-xl bg-secondary-container">
+<img alt="Gourmet Dessert Jar" class="w-full h-auto transition-transform duration-700 group-hover:scale-110" data-alt="An artisanal dessert jar layered with rich chocolate ganache, whipped sea-salt caramel, and crunchy hazelnut praline. The jar is high-fashion styled with a gold-leafed wooden spoon resting beside it on a textured cream paper surface. Soft-focus forest green foliage in the background creates a premium, natural aesthetic with warm, ambient lighting." id="img-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlL-Zi2aOGMw7uzCYR4Lmw-ouKAWbhXzTajnwWsSFMX7AuVKT9-YUoImDY-50Lny5aOQH2AQDznv_tIaX4oNgz121DF-hzVQFvhDiYmT8Vg7cNQiKNfe73GCKxcnAb_wleyTvEtUUP7X3m2B_toRJyvKs1zLDjPlM82aOv9SmBhUtgT_KW_WJXiA1S537pSsodUodnAuqlfM1vYgp19gYq_PuW44DKi7iq__27lwUk-Odh1V3o5Juc-AFyeH0ldnXZsqB97vP4Pco"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-surface text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="mt-4 px-2">
+<p class="font-label-md text-label-md text-tertiary">Dessert Jars</p>
+<h3 class="font-headline-md text-headline-md text-primary mt-1">Caramel Praline Indulgence</h3>
+</div>
+</div>
+<!-- Gallery Item 3: Celebration -->
+<div class="masonry-item group cursor-pointer" onclick="openLightbox('img-3')">
+<div class="relative overflow-hidden rounded-xl bg-secondary-container">
+<img alt="Celebration Event" class="w-full h-auto transition-transform duration-700 group-hover:scale-110" data-alt="A joyful garden birthday celebration scene featuring a long communal wooden table dressed with cream linen. In the center is a vibrant floral-themed cake from The Cakery, surrounded by laughing guests in elegant attire. The lighting is golden hour sun, creating a warm, nostalgic, and high-end lifestyle mood with touches of forest green decor." id="img-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt1hPqWfm7eVpi0yiwd937fV26X44WzFkqohMT54BS7MenoL6oo8Q4w8Zkp8hCJuWAGf2_3lfz8fbFTfZukfO3rVSP9FBer4tQ7VRsIMI0fWr4_zgFDVZIffXoX31Tf_gi07M1aMH1e7gT0Jtxlw7B2Jlf5BPBgOuh1vmxth0VB78SSBloPvwRtpEOXf-3CCWRBTGFXIeR-pE9yXjZYYygoIXp65OqEOBHpBZ0ENwPfbdkoqcnOVBnVKrxAbvQ-zRhQoZ-42W-qXI"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-surface text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="mt-4 px-2">
+<p class="font-label-md text-label-md text-tertiary">Celebrations</p>
+<h3 class="font-headline-md text-headline-md text-primary mt-1">Summer Soirée Moments</h3>
+</div>
+</div>
+<!-- Gallery Item 4: Behind the Scenes -->
+<div class="masonry-item group cursor-pointer" onclick="openLightbox('img-4')">
+<div class="relative overflow-hidden rounded-xl bg-secondary-container">
+<img alt="Chef at Work" class="w-full h-auto transition-transform duration-700 group-hover:scale-110" data-alt="A close-up high-fashion shot of a pastry chef's hands delicately dusting fine gold powder onto a decadent dark chocolate tart. The kitchen environment is modern and clean with marble surfaces. The composition focuses on the tactile motion of baking, captured in a moody, high-contrast style with deep shadows and bright highlights on the cream-colored flour." id="img-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVMnhl_gZRtgs7vR8TzqkgWOz2Gyr3lPUJ9gcSttdUTH1fUall-PvwrI7w2_3wIGVE2HJ8c7krBatPwfQCE3kxs5GF_KLsOIHicdEi_R7H6-S_7Ms6Xsl0az0bOrLPZ3xmggxRDbfwFSyvqHRxZhfk2uiW3HXwOt4bRw5hSwAhJdTHJ6djnN8wvY1Nx97dzHqGczykt7kNNFBkBakPBUjCalM-IVgcQWCPYj-HElTBVNXgDrXKbVHQEJCbTF0FNdN6BT1bNQbdUmQ"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-surface text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="mt-4 px-2">
+<p class="font-label-md text-label-md text-tertiary">Behind the Scenes</p>
+<h3 class="font-headline-md text-headline-md text-primary mt-1">The Art of Gold Dusting</h3>
+</div>
+</div>
+<!-- Gallery Item 5: Macarons -->
+<div class="masonry-item group cursor-pointer" onclick="openLightbox('img-5')">
+<div class="relative overflow-hidden rounded-xl bg-secondary-container">
+<img alt="Artisanal Macarons" class="w-full h-auto transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist overhead shot of artisanal macarons in shades of pistachio green, cream, and dark cocoa, arranged in a perfect geometric grid. The background is a soft, textured cream marble. The lighting is diffused and even, emphasizing the smooth shells and ruffled feet of the macarons, creating a sense of luxury and precision." id="img-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK3oEHY3VcnlFN5C5ImSfLKZw230nI-m7TsS9UZB1p8Lq7rPvkOIj5ED0jOjPuSQy3vHZPGQkGldrsu7MGeXlNP6EypfoNJJt8q_1uAeXeml0dKsDz73UnFopOuU5WDq1o4b4w8lPAN-7JL97LsCD9VDOIV0qsPM74D1V3ttxUIzFfIeqAJ316_T5iTHFPVK3C0w4FxLizpKqz9Gcax8VZWiPewn1vkaqrDajePTOUU28qSZV121vqKlABjlXrGuzFi_WkkDsusxg"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-surface text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="mt-4 px-2">
+<p class="font-label-md text-label-md text-tertiary">Menu Highlights</p>
+<h3 class="font-headline-md text-headline-md text-primary mt-1">Signature Macaron Set</h3>
+</div>
+</div>
+<!-- Gallery Item 6: Kitchen Aesthetic -->
+<div class="masonry-item group cursor-pointer" onclick="openLightbox('img-6')">
+<div class="relative overflow-hidden rounded-xl bg-secondary-container">
+<img alt="Bakery Kitchen" class="w-full h-auto transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic wide-angle shot of a high-end patisserie kitchen featuring copper mixing bowls, forest green cabinetry, and white marble islands. Soft morning light streams through large industrial windows, illuminating flour dust in the air. The scene is clean yet soulful, showcasing the premium tools used by The Cakery in their artisanal process." id="img-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJXQCsWZVERuKpI-zH2PhMyneIIHIqjuf-0qTJleRJSo_VCLycbH-Wn5QTA5EjTRK3MBDYYrcMcrxHb6i3olqaAWHYl7f7lqjOLhq4AT3Et7XtuBXj68qUb-1m9X9I6Dp92k8qhdXfCdFe-t-KJOG78k6-H06vvchxvHp1AjY4TW3IDTBTBLbLeSzSHhs5Dh2DGPlHg1Sm1NNPgyrqt5wBSn5ADSwEXotp4XX8XcCD1zhCRinMK4TkNPHtYlzxjJCH9nob97B359o"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+<span class="material-symbols-outlined text-surface text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="mt-4 px-2">
+<p class="font-label-md text-label-md text-tertiary">Behind the Scenes</p>
+<h3 class="font-headline-md text-headline-md text-primary mt-1">Our Creative Sanctuary</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section (Bento Style) -->
+<section class="px-margin-desktop max-w-container-max mx-auto mt-section-gap">
+<div class="bg-primary-container rounded-3xl p-12 md:p-20 relative overflow-hidden grid md:grid-cols-2 gap-12 items-center">
+<div class="relative z-10">
+<h2 class="font-display-lg text-display-lg text-on-primary-container mb-6">Join Our Inner Circle</h2>
+<p class="font-body-lg text-body-lg text-inverse-primary/90 mb-8">
+                        Get exclusive previews of our seasonal collections and artisanal baking tips delivered to your inbox.
+                    </p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="bg-surface/10 border-b border-inverse-primary text-surface placeholder:text-inverse-primary/50 focus:ring-0 focus:border-surface px-4 py-3 flex-grow outline-none transition-all" placeholder="Your email address" type="email"/>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-3 rounded-full font-label-md hover:bg-tertiary-fixed-dim transition-colors" type="submit">Subscribe</button>
+</form>
+</div>
+<div class="hidden md:block relative h-full min-h-[400px]">
+<div class="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
+<img alt="Luxury Gifting" class="w-full h-full object-cover" data-alt="A luxury gift box from The Cakery, featuring gold foil branding and a forest green ribbon. Inside, perfectly arranged pastries are nestled in cream-colored tissue paper. The lighting is soft and flattering, highlighting the premium tactile quality of the packaging and the artisanal products within." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVhVOA2HrrNyuVQ1ID-gW_ZCcGot8yOG1Spz74TycdD2rHt4NjXU8hZdyPbsMXEmAkSICoPnFfzf1rJXj_DObJrBQ_AChzKNV2vQcMrkuDi3A3RLSQtFh3CY0ZWggL-hZTjrNsz2we1rG2ICsgFoukMCsIns8SfWuJovaPVd41tuTQQ9OYkqsyOuoxGQx_zWiMBFhHUSU3oJ5Owg9Mt21s3c_uuAbnZHmmBgXZOvDsuY_GtyUfYF3IANnUyNyX03gXIjUNU0zS78o"/>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-tertiary-container/30 rounded-full blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-inverse-surface dark:bg-surface-container-lowest text-surface dark:text-on-surface">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter py-section-gap px-margin-desktop w-full mx-auto max-w-container-max">
+<div class="col-span-1 md:col-span-1">
+<h2 class="font-display-lg text-display-lg text-tertiary-fixed dark:text-tertiary-container mb-6">The Cakery</h2>
+<p class="font-body-md text-body-md opacity-80 max-w-xs">Artisanal Indian patisserie merging heritage with contemporary luxury.</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-tertiary-fixed mb-6 uppercase tracking-widest">Explore</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Our Story</a></li>
+<li><a class="font-body-md text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Full Menu</a></li>
+<li><a class="font-body-md text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Sustainability</a></li>
+<li><a class="font-body-md text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Locations</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-tertiary-fixed mb-6 uppercase tracking-widest">Service</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Delivery Areas</a></li>
+<li><a class="font-body-md text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Custom Orders</a></li>
+<li><a class="font-body-md text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Corporate Gifting</a></li>
+<li><a class="font-body-md text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-tertiary-fixed mb-6 uppercase tracking-widest">Connect</h4>
+<div class="flex gap-4 mb-8">
+<a class="w-10 h-10 rounded-full border border-secondary-fixed-dim flex items-center justify-center hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-sm">link</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-secondary-fixed-dim flex items-center justify-center hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</a>
+</div>
+<p class="font-body-md text-secondary-fixed-dim opacity-80">© 2024 The Cakery. Artisanal Indian Patisserie.</p>
+</div>
+</div>
+</footer>
+<!-- Lightbox Modal -->
+<div class="fixed inset-0 z-[100] bg-inverse-surface/95 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 backdrop-blur-sm px-4" id="lightbox">
+<button class="absolute top-8 right-8 text-surface hover:text-tertiary-fixed-dim transition-colors" onclick="closeLightbox()">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="max-w-5xl w-full max-h-[921px] flex flex-col items-center">
+<img alt="Lightbox Content" class="max-w-full max-h-[768px] object-contain rounded-lg shadow-2xl" id="lightbox-img" src=""/>
+<div class="mt-8 text-center text-surface max-w-2xl">
+<h2 class="font-display-lg text-headline-lg mb-4" id="lightbox-title"></h2>
+<p class="font-body-lg text-body-lg opacity-80" id="lightbox-desc"></p>
+</div>
+</div>
+</div>
+<script>
+        function openLightbox(imgId) {
+            const originalImg = document.getElementById(imgId);
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxDesc = document.getElementById('lightbox-desc');
+            
+            // Getting data from siblings
+            const card = originalImg.closest('.masonry-item');
+            const title = card.querySelector('h3').innerText;
+            const category = card.querySelector('p').innerText;
+
+            lightboxImg.src = originalImg.src;
+            lightboxTitle.innerText = title;
+            lightboxDesc.innerText = category;
+
+            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+            lightbox.classList.add('opacity-100');
+            document.body.classList.add('lightbox-active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('opacity-0', 'pointer-events-none');
+            lightbox.classList.remove('opacity-100');
+            document.body.classList.remove('lightbox-active');
+        }
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Sticky Navbar reveal on scroll
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                header.classList.remove('translate-y-0');
+                return;
+            }
+            if (currentScroll > lastScroll && !header.classList.contains('-translate-y-full')) {
+                header.classList.add('-translate-y-full');
+            } else if (currentScroll < lastScroll && header.classList.contains('-translate-y-full')) {
+                header.classList.remove('-translate-y-full');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

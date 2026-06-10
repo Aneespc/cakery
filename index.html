@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Cakery | Artisanal Indian Patisserie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#e7e2d8",
+                      "inverse-surface": "#422a26",
+                      "inverse-primary": "#97d3ba",
+                      "on-primary-container": "#81bda4",
+                      "surface-tint": "#2e6954",
+                      "on-secondary-fixed": "#1d1c16",
+                      "on-primary-fixed": "#002116",
+                      "primary-container": "#0b4d3a",
+                      "primary": "#003526",
+                      "surface-bright": "#fff8f6",
+                      "tertiary": "#3c2a00",
+                      "on-secondary-fixed-variant": "#494740",
+                      "on-tertiary-container": "#d0ab63",
+                      "secondary": "#615e57",
+                      "secondary-fixed-dim": "#cac6bd",
+                      "tertiary-fixed-dim": "#e7c177",
+                      "on-tertiary-fixed": "#261900",
+                      "surface": "#fff8f6",
+                      "on-surface-variant": "#404944",
+                      "surface-container-highest": "#ffdad4",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#fff0ee",
+                      "background": "#fff8f6",
+                      "tertiary-fixed": "#ffdea2",
+                      "primary-fixed": "#b2efd5",
+                      "on-secondary-container": "#67645c",
+                      "primary-fixed-dim": "#97d3ba",
+                      "on-primary-fixed-variant": "#10503d",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#ffe9e5",
+                      "surface-variant": "#ffdad4",
+                      "on-surface": "#2b1613",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#e7e2d8",
+                      "outline-variant": "#bfc9c3",
+                      "on-tertiary-fixed-variant": "#5c4201",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#f8d1cb",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "outline": "#707974",
+                      "on-background": "#2b1613",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#583f00",
+                      "surface-container-high": "#ffe2dd",
+                      "inverse-on-surface": "#ffedea",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "section-gap": "120px",
+                      "base": "8px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "display-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-md": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .parallax-target {
+            transition: transform 0.2s ease-out;
+        }
+        .glass-nav {
+            background: rgba(255, 248, 246, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            gap: 24px;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select{-webkit-appearance:none;appearance:none;background-color:#fff;border-color:#6b7280;border-width:1px;border-radius:0px;padding-top:0.5rem;padding-right:0.75rem;padding-bottom:0.5rem;padding-left:0.75rem;font-size:1rem;line-height:1.5rem;--tw-shadow:0 0 #0000;}[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);border-color:#2563eb}input::placeholder,textarea::placeholder{color:#6b7280;opacity:1}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-date-and-time-value{min-height:1.5em;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field{padding-top:0;padding-bottom:0}select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");background-position:right 0.5rem center;background-repeat:no-repeat;background-size:1.5em 1.5em;padding-right:2.5rem;print-color-adjust:exact}[multiple],[size]:where(select:not([size="1"])){background-image:initial;background-position:initial;background-repeat:unset;background-size:initial;padding-right:0.75rem;print-color-adjust:unset}[type='checkbox'],[type='radio']{-webkit-appearance:none;appearance:none;padding:0;print-color-adjust:exact;display:inline-block;vertical-align:middle;background-origin:border-box;-webkit-user-select:none;user-select:none;flex-shrink:0;height:1rem;width:1rem;color:#2563eb;background-color:#fff;border-color:#6b7280;border-width:1px;--tw-shadow:0 0 #0000}[type='checkbox']{border-radius:0px}[type='radio']{border-radius:100%}[type='checkbox']:focus,[type='radio']:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:2px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}[type='checkbox']:checked,[type='radio']:checked{border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat}[type='checkbox']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='checkbox']:checked{-webkit-appearance:auto;appearance:auto}}[type='radio']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='radio']:checked{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus{border-color:transparent;background-color:currentColor}[type='checkbox']:indeterminate{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat;}@media (forced-colors: active) {[type='checkbox']:indeterminate{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus{border-color:transparent;background-color:currentColor}[type='file']{background:unset;border-color:inherit;border-width:0;border-radius:0;padding:0;font-size:unset;line-height:inherit}[type='file']:focus{outline:1px solid ButtonText;outline:1px auto -webkit-focus-ring-color}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-right-10{right:-2.5rem}.-top-10{top:-2.5rem}.top-0{top:0px}.z-0{z-index:0}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.-mt-20{margin-top:-5rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-section-gap{margin-top:120px}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-square{aspect-ratio:1 / 1}.h-10{height:2.5rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-20{height:5rem}.h-40{height:10rem}.h-\[288px\]{height:288px}.h-\[450px\]{height:450px}.h-\[600px\]{height:600px}.h-\[884px\]{height:884px}.h-full{height:100%}.w-10{width:2.5rem}.w-12{width:3rem}.w-14{width:3.5rem}.w-40{width:10rem}.w-auto{width:auto}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.min-w-\[350px\]{min-width:350px}.max-w-2xl{max-width:42rem}.max-w-container-max{max-width:1200px}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.shrink-0{flex-shrink:0}.rotate-12{--tw-rotate:12deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-95{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.snap-x{scroll-snap-type:x var(--tw-scroll-snap-strictness)}.snap-mandatory{--tw-scroll-snap-strictness:mandatory}.snap-center{scroll-snap-align:center}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-24{gap:6rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-gutter{gap:24px}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-10 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-x-hidden{overflow-x:hidden}.scroll-smooth{scroll-behavior:smooth}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-t-xl{border-top-left-radius:0.75rem;border-top-right-radius:0.75rem}.border{border-width:1px}.border-0{border-width:0px}.border-2{border-width:2px}.border-\[12px\]{border-width:12px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-outline-variant{--tw-border-opacity:1;border-color:rgb(191 201 195 / var(--tw-border-opacity, 1))}.border-primary{--tw-border-opacity:1;border-color:rgb(0 53 38 / var(--tw-border-opacity, 1))}.border-primary-container\/30{border-color:rgb(11 77 58 / 0.3)}.border-secondary-container{--tw-border-opacity:1;border-color:rgb(231 226 216 / var(--tw-border-opacity, 1))}.border-secondary-fixed-dim{--tw-border-opacity:1;border-color:rgb(202 198 189 / var(--tw-border-opacity, 1))}.border-secondary-fixed-dim\/10{border-color:rgb(202 198 189 / 0.1)}.border-secondary-fixed-dim\/30{border-color:rgb(202 198 189 / 0.3)}.border-tertiary-fixed{--tw-border-opacity:1;border-color:rgb(255 222 162 / var(--tw-border-opacity, 1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.bg-background{--tw-bg-opacity:1;background-color:rgb(255 248 246 / var(--tw-bg-opacity, 1))}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-inverse-surface{--tw-bg-opacity:1;background-color:rgb(66 42 38 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(0 53 38 / var(--tw-bg-opacity, 1))}.bg-primary-container{--tw-bg-opacity:1;background-color:rgb(11 77 58 / var(--tw-bg-opacity, 1))}.bg-secondary-container{--tw-bg-opacity:1;background-color:rgb(231 226 216 / var(--tw-bg-opacity, 1))}.bg-secondary-container\/30{background-color:rgb(231 226 216 / 0.3)}.bg-secondary-fixed{--tw-bg-opacity:1;background-color:rgb(231 226 216 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(255 240 238 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest\/10{background-color:rgb(255 255 255 / 0.1)}.bg-tertiary-container{--tw-bg-opacity:1;background-color:rgb(88 63 0 / var(--tw-bg-opacity, 1))}.bg-tertiary-fixed{--tw-bg-opacity:1;background-color:rgb(255 222 162 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-primary\/80{--tw-gradient-from:rgb(0 53 38 / 0.8) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 53 38 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.p-10{padding:2.5rem}.p-8{padding:2rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.px-margin-mobile{padding-left:20px;padding-right:20px}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.py-section-gap{padding-top:120px;padding-bottom:120px}.pb-10{padding-bottom:2.5rem}.pt-2{padding-top:0.5rem}.text-center{text-align:center}.font-body-lg{font-family:Plus Jakarta Sans}.font-body-md{font-family:Plus Jakarta Sans}.font-display-lg{font-family:Playfair Display}.font-headline-lg{font-family:Playfair Display}.font-headline-md{font-family:Playfair Display}.font-label-md{font-family:Plus Jakarta Sans}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[24px\]{font-size:24px}.text-body-md{font-size:16px;line-height:1.6;font-weight:400}.text-display-lg{font-size:56px;line-height:1.1;letter-spacing:-0.02em;font-weight:700}.text-headline-lg-mobile{font-size:32px;line-height:1.2;font-weight:600}.text-label-md{font-size:14px;line-height:1.0;letter-spacing:0.05em;font-weight:600}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.italic{font-style:italic}.leading-none{line-height:1}.leading-tight{line-height:1.25}.text-on-background{--tw-text-opacity:1;color:rgb(43 22 19 / var(--tw-text-opacity, 1))}.text-on-primary{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-on-secondary-container{--tw-text-opacity:1;color:rgb(103 100 92 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(43 22 19 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(64 73 68 / var(--tw-text-opacity, 1))}.text-on-tertiary-fixed{--tw-text-opacity:1;color:rgb(38 25 0 / var(--tw-text-opacity, 1))}.text-on-tertiary-fixed-variant{--tw-text-opacity:1;color:rgb(92 66 1 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(0 53 38 / var(--tw-text-opacity, 1))}.text-primary-fixed{--tw-text-opacity:1;color:rgb(178 239 213 / var(--tw-text-opacity, 1))}.text-secondary-fixed{--tw-text-opacity:1;color:rgb(231 226 216 / var(--tw-text-opacity, 1))}.text-secondary-fixed-dim{--tw-text-opacity:1;color:rgb(202 198 189 / var(--tw-text-opacity, 1))}.text-surface{--tw-text-opacity:1;color:rgb(255 248 246 / var(--tw-text-opacity, 1))}.text-tertiary-container{--tw-text-opacity:1;color:rgb(88 63 0 / var(--tw-text-opacity, 1))}.text-tertiary-fixed{--tw-text-opacity:1;color:rgb(255 222 162 / var(--tw-text-opacity, 1))}.text-tertiary-fixed-dim{--tw-text-opacity:1;color:rgb(231 193 119 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-20{opacity:0.2}.opacity-60{opacity:0.6}.opacity-70{opacity:0.7}.opacity-80{opacity:0.8}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-primary\/20{--tw-shadow-color:rgb(0 53 38 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-500{transition-duration:500ms}.duration-700{transition-duration:700ms}.hover\:translate-y-\[-2px\]:hover{--tw-translate-y:-2px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-primary-container:hover{--tw-bg-opacity:1;background-color:rgb(11 77 58 / var(--tw-bg-opacity, 1))}.hover\:bg-primary\/5:hover{background-color:rgb(0 53 38 / 0.05)}.hover\:bg-tertiary-fixed:hover{--tw-bg-opacity:1;background-color:rgb(255 222 162 / var(--tw-bg-opacity, 1))}.hover\:bg-tertiary-fixed-dim:hover{--tw-bg-opacity:1;background-color:rgb(231 193 119 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(0 53 38 / var(--tw-text-opacity, 1))}.hover\:text-primary-container:hover{--tw-text-opacity:1;color:rgb(11 77 58 / var(--tw-text-opacity, 1))}.hover\:text-tertiary-container:hover{--tw-text-opacity:1;color:rgb(88 63 0 / var(--tw-text-opacity, 1))}.hover\:text-tertiary-fixed-dim:hover{--tw-text-opacity:1;color:rgb(231 193 119 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-tertiary-fixed:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(255 222 162 / var(--tw-ring-opacity, 1))}.active\:scale-90:active{--tw-scale-x:.9;--tw-scale-y:.9;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:opacity-100{opacity:1}.group:hover .group-hover\:opacity-40{opacity:0.4}.dark\:bg-surface-container-lowest:is(.dark *){--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.dark\:text-on-surface:is(.dark *){--tw-text-opacity:1;color:rgb(43 22 19 / var(--tw-text-opacity, 1))}.dark\:text-tertiary-container:is(.dark *){--tw-text-opacity:1;color:rgb(88 63 0 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:col-span-4{grid-column:span 4 / span 4}.md\:col-span-8{grid-column:span 8 / span 8}.md\:block{display:block}.md\:flex{display:flex}.md\:min-w-\[450px\]{min-width:450px}.md\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.md\:gap-4{gap:1rem}.md\:rounded-2xl{border-radius:1rem}.md\:px-margin-desktop{padding-left:64px;padding-right:64px}.md\:text-display-lg{font-size:56px;line-height:1.1;letter-spacing:-0.02em;font-weight:700}}@media (min-width: 1024px){.lg\:col-span-1{grid-column:span 1 / span 1}.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden" data-mode="connect">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<img alt="The Cakery Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb1dvexoAd10rdBZ-owqHkWuDTT2j0821cMjh658mNyFBk88v2FPog3okgTj4ZTmjLoxnUjIAW7clL7tROfnXcArfzX56U1zHYcBQr49R4-aMYBrhq5MzM-5OZN-qSTZCifpBqEYmzMMohCY9gg141jZntNEv7f-q_ElwBdKaDy5rItMfr-Q1_2omrGg5O5mwdpclKFqPHKeEiJYGzNQyqE-r-9AU9L2zmZBFHKYG1xGV5yGmXfFILwGt7cwu-hiCwj5E-fzxFWGc"/>
+<span class="font-display-lg text-[24px] md:text-display-lg font-bold text-primary">The Cakery</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary border-b-2 border-tertiary-fixed font-bold font-headline-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors font-headline-md text-body-md" href="menu.html">Menu</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors font-headline-md text-body-md" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors font-headline-md text-body-md" href="#">Locations</a>
+<a class="text-on-surface-variant font-medium hover:text-primary-container transition-colors font-headline-md text-body-md" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md scale-95 active:scale-90 transition-transform hover:bg-primary-container">
+                Order Now
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[884px] flex items-center overflow-hidden bg-primary" data-stitch-vh="h-[884px]===h-screen"><div class="absolute inset-0 z-0"><img alt="Artisanal cakes and dessert jars" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl7Z7h0BrE05vqjj436yuBvTVc6YW04c7zbTlyyw_i03quhx2jrWRM600ol-j7e6xVwFrzJldEo0iCG8cSBYDimqUOOwdd6XBjBJPWyh5D-v8pC4p-E0B2tXI_PtS0Ga0hzY7lwdzU5RS6vYLjfKLJcWuSk1g6AjC8ERugLGhgODBndELAfFa6pXbv5V-AU3YiH83hKOWJzWYbUkzvymx6BkHgdTh9ABxqYYG4aCTnumKo0GYMxVY-o9dhZnFm5qN2mGqtLHVRBsU"/></div>
+<!-- Background Decor -->
+<div class="w-full px-margin-mobile md:px-margin-desktop z-10 -mt-20 max-w-container-max mx-auto">
+<div class="reveal active">
+<span class="inline-block px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-label-md mb-6">ESTD 2024</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg mb-6 leading-tight text-white">
+                    Crafted With Love, <br/>
+<span class="text-tertiary-container italic font-medium">Baked To Perfection.</span>
+</h1>
+<p class="font-body-lg mb-10 max-w-lg text-white">From celebration cakes to indulgent dessert jars</p><div>made with love!</div><p></p><p class=""></p><p class=""></p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all">
+                        Order Now
+                    </button>
+<button class="border-2 border-white text-white px-10 py-4 rounded-full font-label-md hover:bg-white/10 transition-all">
+                        View Menu
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Best Sellers Bento Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal active">
+<h2 class="font-headline-lg text-primary mb-4">Our Signature Creations</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Discover the art of artisanal baking with our hand-picked best sellers, each crafted using premium local ingredients.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Featured Item -->
+<div class="md:col-span-8 group overflow-hidden rounded-3xl bg-surface-container-low relative h-[600px] reveal active">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A macro photograph of an exquisite white velvet cake topped with fresh raspberries and a dusting of powdered sugar. The cake is positioned in the center against a soft-focus forest green background. The lighting is high-key and airy, emphasizing the delicate texture of the frosting. Premium patisserie branding style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5XmwfKnVdWB1jF4-cMSfKZGL0SjMXIGlUDc3uRSSrnAr10C8p62mg2LGgVo3ihMyKMr-QcUc_c04jWPQTCdqnMixBpGuK_6_1N-IYpNijx7GX-avgJvfL3qDxza0Qa0cHqkMTzXkrmHMs8BHaXZUT-mySA2kBCAVhwO6S667evZKb-2rPwgbHYZDJ2LgvztsG7fgbBxiEMs6y5sukAW1cm7MgkO06M0i-V-KdyeN7htaEgy-zbPQC6sIS1DA8EfJci8RBaWZslV4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-10">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-xs font-bold w-fit mb-4">BEST SELLER</span>
+<h3 class="text-white font-headline-lg text-3xl mb-2">Raspberry Velvet Dream</h3>
+<p class="text-secondary-fixed font-body-md mb-6 max-w-md">Our signature moist velvet sponge layered with house-made berry compote and whipped vanilla cream.</p>
+<button class="bg-white text-primary px-8 py-3 rounded-full font-label-md w-fit hover:bg-tertiary-fixed transition-colors">Add to Cart - ₹1,499</button>
+</div>
+</div>
+<!-- Side Bento Stack -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-secondary-container h-[288px] rounded-3xl p-8 flex flex-col justify-between group overflow-hidden relative reveal active">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity" data-alt="Modern dessert jars filled with layers of dark chocolate mousse, sea salt caramel, and crunchy hazelnut praline. The jars are clear glass with minimalist branding. The setting is a clean, bright kitchen counter with scattered cocoa nibs and sea salt flakes. Soft, elegant morning light creates gentle shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Vj3f0mePKkoNyp7m8bsAFRbylGPM_LYN3HKhSbxrBDht7KPDYPWHYpf9bVGlFiKQEBxbeWwZwocKQpPm7AAA9KAGvBZHXhZ0pVjCxiKKgi3fa-wEdPVsDi4sGtr5yrT8uNBiggax5SvhbLyO6yNUiY8EM_mVfngYPrW1DdRXRWa1Gyma6xJkNrzqIPX8e_beRXpHsTgYIw31wX1MPtocOYpKf79hcuCYm-OBY0KkgUN5zCNHJKPxFQSAPODhar3nO9sZfriFfik"/>
+<div class="relative z-10">
+<h3 class="font-headline-md text-primary mb-2">Dessert Jars</h3>
+<p class="text-on-surface-variant text-sm">Perfectly portioned treats for gifts or solo indulgence.</p>
+</div>
+<a class="relative z-10 text-primary font-bold flex items-center gap-2 group" href="#">
+                        Explore Jars 
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="bg-tertiary-container h-[288px] rounded-3xl p-8 flex flex-col justify-between text-white reveal active">
+<div>
+<h3 class="font-headline-md mb-2 text-tertiary-fixed">Custom Cakes</h3>
+<p class="text-tertiary-fixed-dim text-sm">Let us bring your celebration vision to life with bespoke designs.</p>
+</div>
+<button class="border border-tertiary-fixed text-tertiary-fixed px-6 py-2 rounded-full font-label-md w-fit hover:bg-tertiary-fixed hover:text-tertiary-container transition-all">
+                        Consult Now
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us Grid -->
+<section class="bg-inverse-surface text-surface py-section-gap">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="reveal active">
+<h2 class="font-display-lg text-tertiary-fixed mb-8 leading-tight">Why Our Patisserie Stands Out</h2>
+<div class="space-y-10">
+<div class="flex gap-6">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-primary-container flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl mb-2">Sustainable Ingredients</h4>
+<p class="text-secondary-fixed-dim font-body-md opacity-80">We partner with local organic dairy farms and use ethically sourced single-origin Indian chocolate.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-primary-container flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-3xl">brush</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl mb-2">Artisanal Craftsmanship</h4>
+<p class="text-secondary-fixed-dim font-body-md opacity-80">Every flower is hand-piped and every glaze is meticulously poured by our master pastry chefs.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-primary-container flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-3xl">schedule</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl mb-2">Freshly Baked Daily</h4>
+<p class="text-secondary-fixed-dim font-body-md opacity-80">We don't do overnight storage. Your cake is baked just hours before it reaches your door.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative reveal active">
+<div class="aspect-square rounded-full overflow-hidden border-[12px] border-primary-container/30">
+<img class="w-full h-full object-cover" data-alt="A professional pastry chef's hands carefully placing fresh mint leaves on top of a delicate citrus tart. The chef is wearing a clean white uniform. The workspace is a polished steel kitchen counter, reflecting the bright studio lights. The atmosphere is professional, clean, and focused on fine culinary details. High-end food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpMXTkOW2FkexnxTvdTurT0Laoe2Kplo0KbhOl5VR3Oa_5bWcSe8ZdZ_N0pPvzJOvQapkSY6dlU_Kkr0W23UP9rodUS_t3-fmZ1kXNoR25n98-ExrmgIzSmp4MCU7RhZWJOLW9EtNG8VPblw38NfFnCLyUrn3fbMnQcFf2XdXGbAUiZAzjl1bBUz8ICYy-4BEIcgpEQKFbc0n8pFX1BFwvUiDv4VcWKi6Y8XsnNHOO9T1rL_8gV_5UmSQ0wcZqkBwOgA3xC_gIzWY"/>
+</div>
+<div class="absolute -top-10 -right-10 bg-tertiary-container p-10 rounded-full w-40 h-40 flex items-center justify-center text-center rotate-12">
+<p class="font-headline-md text-tertiary-fixed leading-none">100% Eggless Options</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Slider -->
+<section class="py-section-gap px-margin-mobile overflow-hidden">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-primary text-center mb-16 reveal active">Sweet Words From Our Patrons</h2>
+<div class="flex gap-8 overflow-x-auto pb-10 scrollbar-hide snap-x snap-mandatory">
+<!-- Testimonial 1 -->
+<div class="min-w-[350px] md:min-w-[450px] bg-white p-10 rounded-3xl shadow-sm border border-secondary-container snap-center reveal active">
+<div class="flex text-tertiary-container mb-6">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+</div>
+<p class="font-body-lg text-on-surface-variant mb-8 italic">"The cake for my daughter's first birthday was a masterpiece. Not only did it look exactly like the mood board, but the flavor was surprisingly light and not overly sweet."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed"></div>
+<div>
+<h5 class="font-bold text-primary">Ananya Sharma</h5>
+<p class="text-xs text-on-secondary-container">Mumbai, MH</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="min-w-[350px] md:min-w-[450px] bg-primary text-on-primary p-10 rounded-3xl shadow-xl snap-center reveal active">
+<div class="flex text-tertiary-fixed mb-6">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+</div>
+<p class="font-body-lg mb-8 italic text-primary-fixed">"Their Hazelnut Praline jars are dangerously addictive. I ordered them for a corporate event and they were the highlight of the evening. Truly world-class."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container"></div>
+<div>
+<h5 class="font-bold">Vikram Singh</h5>
+<p class="text-xs opacity-70">Bengaluru, KA</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="min-w-[350px] md:min-w-[450px] bg-white p-10 rounded-3xl shadow-sm border border-secondary-container snap-center reveal active">
+<div class="flex text-tertiary-container mb-6">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>star</span>
+</div>
+<p class="font-body-lg text-on-surface-variant mb-8 italic">"The packaging alone is luxury. You can tell they care about the experience from the moment it's delivered. The Pistachio Rose cake is divine."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed"></div>
+<div>
+<h5 class="font-bold text-primary">Priya Patel</h5>
+<p class="text-xs text-on-secondary-container">Delhi, DL</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Delivery & Location Map -->
+<section class="bg-secondary-container/30 py-section-gap">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<div class="lg:col-span-1 reveal active">
+<h2 class="font-headline-lg text-primary mb-6">Visit Our Boutique</h2>
+<p class="font-body-md text-on-surface-variant mb-8">Experience the art of artisanal baking in person at our flagship location in Kannur, Kerala.</p>
+<div class="p-8 bg-white rounded-3xl border border-outline-variant shadow-sm space-y-6">
+<div>
+<h3 class="font-headline-md text-primary mb-2">Burnacherry, Kannur</h3>
+<p class="text-on-surface-variant font-body-md">Ocean View, Burnacherry, Kannur, Kerala 670001</p>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<span class="font-medium">10:00 AM – 11:00 PM</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">call</span>
+<span class="font-medium">+91 497 270 1234</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 pt-2">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">directions</span>
+            Get Directions
+        </button>
+<button class="border-2 border-primary text-primary px-6 py-3 rounded-full font-label-md hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">chat</span>
+            WhatsApp Order
+        </button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-2 h-[450px] rounded-3xl overflow-hidden shadow-inner reveal active">
+<iframe allowfullscreen="" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3904.567890123456!2d75.3654321!3d11.8654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4229955555555%3A0x5555555555555555!2sBurnacherry%2C%20Kannur%2C%20Kerala!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"></iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- Instagram Feed Preview -->
+<section class="py-section-gap">
+<div class="text-center mb-12 reveal active">
+<h3 class="font-headline-md text-primary">Join Our Sweet Community</h3>
+<p class="text-on-surface-variant">Follow us <a class="text-primary font-bold hover:underline" href="#">@thecakery_artisanal</a></p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-1 md:gap-4 px-4 reveal active">
+<div class="aspect-square group overflow-hidden rounded-lg md:rounded-2xl relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Instagram feed preview image 1. A close-up of a beautifully decorated lemon tart with edible flowers. Natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAarXrccz_ar-cNlCtTQ6wkqBd147UPAfJtd5iX4d3QK37dLIdyAkvNCoboX3_bwWgjE0YGE6n4r--FgoPmwprnm67lwEiyOO1-WqVDNjE8h_TClb7cyycU-ZnPhzZi23AfDEswHc3r96XlWjPr3MDqcX-OEVnnIvGyf209cnMntlzie-w94l8M-9pTWweCeXLLX46HvBidY4y-Lle61-kBQpC8cyAZwGVqgteIzn8p3wW_D1FlICBVogSvlN-6tw09XlhCiyoG27c"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="aspect-square group overflow-hidden rounded-lg md:rounded-2xl relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Instagram feed preview image 2. A stack of colorful macarons in a luxury gift box. Pastel color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG8EcWvWl2TDJXqAYXbNPGhmFQd7WhPxIDj21TmRA-RyPx99E68zv2Tcrkgv10ZWc1xs4OrRLW54-ZZC20bOJ1nz5S6KkMAwu2svaYtw6onP38p9RcCOmwEY5xqJKi_xiLS756js8YwIPSZrhCPJ4SfRWuXyznrWEhAm3vzDvn8PDHL2wr0HnYGgsPRNjFt9-k6Bl1eq6onBuokIM_Q-utut5mUmKTGF7PIZ0jzeNKrtnpMaNkB3FavKJQNjp9nV7IiLUq-v4JKG4"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="aspect-square group overflow-hidden rounded-lg md:rounded-2xl relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Instagram feed preview image 3. A delicious blueberry cheesecake slice with fresh fruit on a rustic plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiLdquIl7q0FlpZ-2rxIgbW-_jc2JrJZ4siCQ2RRc_IOcBagdXel2TSqwVGhpKCL0LR3AGAAZxQIvCfceOw4QlDjxg4TKPjQ_2dbOcHBxRgfRVf1gprzBEGEhrSVdsc6sZkPDwy_7aKVNo9Jf4qVrPWQbhVKVdKcduRhvbz3D0yaq4ZBpPmYzwiEt5i1lZMdRIkxQxAEBztg7glmqaCsF_X7J9Z3VQNDs_Wd79xWCmS52sBAaDvrQixg22Dwi5RBsxyn3iNqyiNd0"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="aspect-square group overflow-hidden rounded-lg md:rounded-2xl relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Instagram feed preview image 4. A celebration cake with sparklers and gold dust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTgms6lYa1aXEoHxUbUlpydA7GbWpwkxqIGjWwlPwI6_bkI90z0yL0XfVyVF16_hpcdK3BV-_l3UwTp0xpbkpLDFn8zKv0Nm7DPyAWMYARhl73qxb7DKLAWfpDjWndZGD-NdYCKijAlN2n68vx2-AEzr22qPHwxd-8R_NjqMKprxUbT_pHpuJJ5qOCDIB5BdlVqnbFsvK7yBAZW9tEL24JyqTGFo0bXH8YIAyDsCiS-odElkXTiCEPbqzCDTOB-aOyxdFkCtJZyRY"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+<div class="aspect-square group overflow-hidden rounded-lg md:rounded-2xl relative hidden md:block">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Instagram feed preview image 5. Artisanal donuts with unique glazes and toppings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ0HsPYGauRysld1dE75XvGSMiR97CZGQrlF_eWqDMGhcsAkU_tzUcIPiC9srcT3gziKWdksA4k1W12r5UoidDFWau-XwhO4EJIVdtY3YVeqJUTzhj_jUP7bzWZGyDHmJO9GECoD-EOhSZ3fFYgKQM3tSqXQIQH_XuNcleTkj3RkLfjTVjGkTba9VmIMxOEBIOp3bGDie3Lsmv91h6hKivB4UilkycE84ZE7cpG2pRUMwcQt8LKyC5LB-TVFwNjJs_bWFUQJd4P8o"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest text-surface dark:text-on-surface w-full rounded-t-xl mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter py-section-gap px-margin-mobile md:px-margin-desktop w-full mx-auto max-w-container-max">
+<div class="space-y-6">
+<span class="font-display-lg text-display-lg text-tertiary-fixed dark:text-tertiary-container block">The Cakery</span>
+<p class="font-body-md opacity-70">Elevating moments through the art of artisanal Indian patisserie. From our oven to your heart.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-secondary-fixed-dim flex items-center justify-center hover:bg-tertiary-fixed hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">face_nod</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-secondary-fixed-dim flex items-center justify-center hover:bg-tertiary-fixed hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-tertiary-fixed">Discover</h4>
+<nav class="flex flex-col gap-3 font-body-md">
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Our Story</a>
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Delivery Areas</a>
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Sustainability</a>
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Newsletter</a>
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Instagram</a>
+</nav>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-tertiary-fixed">Shop</h4>
+<nav class="flex flex-col gap-3 font-body-md">
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Signature Cakes</a>
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Dessert Jars</a>
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Gifting Box</a>
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Custom Orders</a>
+<a class="text-secondary-fixed-dim hover:text-tertiary-fixed-dim transition-colors" href="#">Menu PDF</a>
+</nav>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-tertiary-fixed">Newsletter</h4>
+<p class="text-sm text-secondary-fixed-dim">Get the latest seasonal treats and exclusive offers.</p>
+<form class="flex flex-col gap-3">
+<input class="bg-surface-container-lowest/10 border border-secondary-fixed-dim/30 rounded-lg px-4 py-2 text-white focus:ring-1 focus:ring-tertiary-fixed" placeholder="Your Email" type="email"/>
+<button class="bg-tertiary-fixed text-primary px-4 py-2 rounded-lg font-bold hover:bg-tertiary-fixed-dim transition-colors">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-secondary-fixed-dim/10 py-8 text-center text-secondary-fixed-dim font-body-md">
+<p class="">© 2024 The Cakery. Artisanal Indian Patisserie.</p>
+</div>
+</footer>
+<script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        // Simple Parallax Effect for Hero
+        window.addEventListener('scroll', () => {
+            const targets = document.querySelectorAll('.parallax-target');
+            const scrolled = window.pageYOffset;
+            
+            targets.forEach(target => {
+                const speed = target.getAttribute('data-speed') || 0.1;
+                target.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Initialize reveal on load
+        window.onload = reveal;
+    </script>
+</body></html>
